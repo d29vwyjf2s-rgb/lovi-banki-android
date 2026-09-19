@@ -75,6 +75,22 @@ jobs:
           version/code=1
           version/name="1.0"
           EOF
+                - name: Diagnose Android export
+        run: |
+          echo "=== JAVA ==="
+          java -version
+
+          echo "=== ANDROID SDK ==="
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+          adb version
+          sdkmanager --list_installed
+
+          echo "=== EXPORT PRESET ==="
+          cat export_presets.cfg
+
+          echo "=== GODOT EXPORT LIST ==="
+          godot --headless --path . --editor --quit
       - name: Build Android
         run: |
           mkdir -p build
