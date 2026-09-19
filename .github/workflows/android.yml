@@ -16,9 +16,10 @@ jobs:
 
       - name: Setup Godot
         uses: chickensoft-games/setup-godot@v2
-        with:
-          version: "4.3.0"
-          use-dotnet: false
+  include-templates: true  use-dotnet
+: false  version
+: "4.3.0"        with
+:
 
       - name: Check project
         run: godot --headless --editor --quit
