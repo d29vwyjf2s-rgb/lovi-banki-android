@@ -16,15 +16,15 @@ jobs:
 
       - name: Setup Godot
         uses: chickensoft-games/setup-godot@v2
-  include-templates: true  use-dotnet
-: false  version
-: "4.3.0"        with
-:
+        with:
+          version: "4.3.0"
+          use-dotnet: false
+          include-templates: true
 
       - name: Check project
         run: godot --headless --editor --quit
 
-      - name: Build
+      - name: Build APK
         run: |
           mkdir -p build
           godot --headless --path . --export-release "Android" build/LoviBanki.apk
