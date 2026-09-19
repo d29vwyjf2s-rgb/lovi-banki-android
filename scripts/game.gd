@@ -214,3 +214,5 @@ func _draw() -> void:
         25,
         Color("#DDDDDD")
     )
+func _get_player_position() -> Vector2:
+    return Vector2(player_x, 850.0)
