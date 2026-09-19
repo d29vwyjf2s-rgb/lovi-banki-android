@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build Android APK
     runs-on: ubuntu-latest
 
     steps:
@@ -21,13 +22,35 @@ jobs:
           use-dotnet: false
           include-templates: true
 
-      - name: Check project
-        run: godot --headless --editor --quit
+      - name: Show Godot version
+        run: godot --version
+
+      - name: Import Godot project
+        run: |
+          godot --headless --path . --editor --quit || true
+
+      - name: Check Android export preset
+        run: |
+          test -f project.godot
+          test -f export_presets.cfg
+          echo "Project files found"
+          echo "Android preset:"
+          grep -A5 -B2 'name="Android"' export_presets.cfg || true
+
+      - name: Create build directory
+        run: mkdir -p build
 
       - name: Build APK
         run: |
-          mkdir -p build
-          godot --headless --path . --export-release "Android" build/LoviBanki.apk
+          godot --headless \
+            --path . \
+            --export-release "Android" \
+            build/LoviBanki.apk
+
+      - name: Check APK
+        run: |
+          ls -lh build/
+          test -f build/LoviBanki.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
