@@ -53,7 +53,28 @@ jobs:
       - name: Check project
         run: |
           godot --headless --path . --editor --quit
+      - name: Create Android export preset
+        run: |
+          cat > export_presets.cfg <<'EOF'
+          [preset.0]
 
+          name="Android"
+          platform="Android"
+          runnable=true
+          dedicated_server=false
+          custom_features=""
+          export_filter="all_resources"
+          include_filter=""
+          exclude_filter=""
+          export_path="build/LoviBanki.apk"
+
+          [preset.0.options]
+
+          package/unique_name="com.dimas.lovibanki"
+          package/name="Lovi Banki"
+          version/code=1
+          version/name="1.0"
+          EOF
       - name: Build Android
         run: |
           mkdir -p build
