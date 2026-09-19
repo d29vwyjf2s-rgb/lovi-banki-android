@@ -132,35 +132,7 @@ func _draw() -> void:
         Color(0.18, 0.20, 0.23, 0.25)
     )
 
-    # Персонаж-заглушка
-    draw_circle(
-        Vector2(player_x, 850),
-        50,
-        Color("#C6C6C6")
-    )
 
-    draw_rect(
-        Rect2(
-            player_x - 35,
-            900,
-            70,
-            105
-        ),
-        Color("#45484C")
-    )
-
-    # Ноги
-    draw_circle(
-        Vector2(player_x - 35, 1005),
-        18,
-        Color("#18191B")
-    )
-
-    draw_circle(
-        Vector2(player_x + 35, 1005),
-        18,
-        Color("#18191B")
-    )
 
     # Банки
     for can in cans:
