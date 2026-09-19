@@ -1,20 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="768" viewBox="0 0 512 768">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="420" viewBox="0 0 300 420">
   <defs>
-    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0"/><stop offset="1" stop-opacity=".2"/></linearGradient>
-    <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#666"/><stop offset="1" stop-color="#292929"/></linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b5563"/>
+      <stop offset="1" stop-color="#1f2937"/>
+    </linearGradient>
   </defs>
-  <rect width="512" height="768" fill="none"/>
-  <ellipse cx="256" cy="716" rx="145" ry="25" fill="#000" opacity=".35"/>
-  <circle cx="256" cy="185" r="92" fill="#c98f67"/>
-  <path d="M164 178c8-85 177-106 184 9-30-28-57-38-95-32-32 5-55 18-89 23z" fill="#333"/>
-  <circle cx="222" cy="190" r="8" fill="#222"/><circle cx="290" cy="190" r="8" fill="#222"/>
-  <path d="M222 232c24 14 45 14 69 0" fill="none" stroke="#633" stroke-width="7" stroke-linecap="round"/>
-  <path d="M175 280 Q256 250 337 280 L375 510 Q256 555 137 510Z" fill="url(#shirt)"/>
-  <path d="M177 294L103 452" stroke="#c98f67" stroke-width="42" stroke-linecap="round"/>
-  <path d="M335 294L409 452" stroke="#c98f67" stroke-width="42" stroke-linecap="round"/>
-  <circle cx="103" cy="452" r="23" fill="#c98f67"/><circle cx="409" cy="452" r="23" fill="#c98f67"/>
-  <path d="M190 505L175 665" stroke="#1d2630" stroke-width="55" stroke-linecap="round"/>
-  <path d="M322 505L337 665" stroke="#1d2630" stroke-width="55" stroke-linecap="round"/>
-  <path d="M151 674h52l-6 32h-80c0-18 15-32 34-32z" fill="#111"/>
-  <path d="M309 674h52l34 32h-80c-5-15-3-23-6-32z" fill="#111"/>
+
+  <!-- Голова -->
+  <circle cx="150" cy="85" r="58" fill="#c58b62"/>
+
+  <!-- Волосы -->
+  <path d="M95 75 Q110 20 150 25 Q195 20 205 75
+           Q185 55 150 58 Q115 55 95 75Z"
+        fill="#29211c"/>
+
+  <!-- Лицо -->
+  <circle cx="128" cy="88" r="6" fill="#111"/>
+  <circle cx="172" cy="88" r="6" fill="#111"/>
+
+  <path d="M125 115 Q150 128 175 115"
+        fill="none"
+        stroke="#5b3425"
+        stroke-width="6"
+        stroke-linecap="round"/>
+
+  <!-- Тело -->
+  <path d="M85 150 Q150 125 215 150
+           L235 310 Q150 340 65 310Z"
+        fill="url(#shirt)"/>
+
+  <!-- Руки -->
+  <rect x="35" y="165" width="45" height="145" rx="20"
+        fill="#c58b62"
+        transform="rotate(12 35 165)"/>
+
+  <rect x="220" y="165" width="45" height="145" rx="20"
+        fill="#c58b62"
+        transform="rotate(-12 220 165)"/>
+
+  <!-- Ноги -->
+  <rect x="85" y="300" width="50" height="105" rx="20"
+        fill="#202020"/>
+
+  <rect x="165" y="300" width="50" height="105" rx="20"
+        fill="#202020"/>
+
+  <!-- Обувь -->
+  <ellipse cx="105" cy="405" rx="45" ry="15" fill="#111"/>
+  <ellipse cx="195" cy="405" rx="45" ry="15" fill="#111"/>
 </svg>
