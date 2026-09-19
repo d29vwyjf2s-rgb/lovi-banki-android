@@ -22,34 +22,30 @@ jobs:
           use-dotnet: false
           include-templates: true
 
-      - name: Show Godot version
+      - name: Godot version
         run: godot --version
 
-      - name: Import Godot project
+      - name: Project check
         run: |
-          godot --headless --path . --editor --quit || true
+          godot --headless --path . --editor --quit
 
-      - name: Check Android export preset
+      - name: Show export presets
         run: |
-          test -f project.godot
-          test -f export_presets.cfg
-          echo "Project files found"
-          echo "Android preset:"
-          grep -A5 -B2 'name="Android"' export_presets.cfg || true
+          echo "===== export_presets.cfg ====="
+          cat export_presets.cfg
+          echo "=============================="
 
-      - name: Create build directory
-        run: mkdir -p build
-
-      - name: Build APK
+      - name: Build Android APK
         run: |
+          mkdir -p build
           godot --headless \
             --path . \
-            --export-release "Android" \
+            --export-debug "Android" \
             build/LoviBanki.apk
 
-      - name: Check APK
+      - name: APK result
         run: |
-          ls -lh build/
+          ls -lah build
           test -f build/LoviBanki.apk
 
       - name: Upload APK
