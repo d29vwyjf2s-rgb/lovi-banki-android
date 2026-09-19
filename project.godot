@@ -1,6 +1,13 @@
+; Engine configuration file.
+; Лови Банки
+
+config_version=5
+
 [application]
 
 config/name="Лови Банки"
+config/description="Лови банки — аркадная игра"
+config/package_name="com.dimas.lovibanki"
 run/main_scene="res://scenes/Main.tscn"
 
 [display]
